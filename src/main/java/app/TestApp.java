@@ -33,8 +33,8 @@ public class TestApp {
         memVO.setMemPwd("30678");
         memVO.setMemPh("0978533937");
         memVO.setMemAddress("Tainan, yidjf");
-        memVO.setMemAuth((short)1);
-        memVO.setMemVio((short)1);
+        memVO.setMemAuth((byte)1);
+        memVO.setMemVio((byte)1);
         memDAO.updateByMerge(memVO);
     }
 
