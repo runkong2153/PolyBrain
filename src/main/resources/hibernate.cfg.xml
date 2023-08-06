@@ -6,16 +6,20 @@
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/polybrain_mem?serverTimezone=Asia/Taipei</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">06494784</property>
+
+        <!--<property name="hibernate.connection.datasource">java:comp/env/jdbc/polybrain_mem</property> -->
+        <property name="hibernate.current_session_context_class">thread</property>
+
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
         <property name="hibernate.highlight_sql">true</property>
 
         <!-- VO mapping -> Table Name -->
-        <mapping class="web.mem.vo.MemVO"/>
-        <mapping class="web.wallet.vo.WalletVO"/>
-        <mapping class="web.emp.vo.EmpVO"/>
-        <mapping class="web.emp.vo.FuncVO"/>
-        <mapping class="web.emp.vo.AuthVO"/>
+        <mapping class="web.mem.vo.MemVo"/>
+        <mapping class="web.wallet.vo.WalletVo"/>
+        <mapping class="web.emp.vo.EmpVo"/>
+        <mapping class="web.emp.vo.FuncVo"/>
+        <mapping class="web.emp.vo.AuthVo"/>
     </session-factory>
 </hibernate-configuration>
