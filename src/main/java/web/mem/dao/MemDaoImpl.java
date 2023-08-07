@@ -10,8 +10,7 @@ import java.util.List;
 public class MemDaoImpl implements MemDao {
 
     public Integer insert(MemVo memVo) {
-        getSession().persist(memVo);
-        return 1;
+        return (Integer) getSession().save(memVo);
     }
 
     public Integer deleteById(Integer memNo) {
@@ -28,6 +27,12 @@ public class MemDaoImpl implements MemDao {
             return -1;
         }
     }
+
+    @Override
+    public MemVo selectById(Integer id) {
+        return null;
+    }
+
     public boolean updateById(@NotNull MemVo newMemVo) {
         Session session = getSession();
         MemVo oldMemVO = session.get(MemVo.class, newMemVo.getMemNo());
@@ -76,13 +81,10 @@ public class MemDaoImpl implements MemDao {
         return getSession().createQuery(hql, MemVo.class).getResultList();
     }
     public MemVo selectByMemName(String memName){
-        final String hql = "FROM MemVo WHERE memName = :memName";
+        final String hql = "FROM member WHERE memName = :memName";
         return getSession().createQuery(hql, MemVo.class)
                 .setParameter("memName", memName)
                 .uniqueResult();
     }
-
-//    public  MemVo selectForLogin(String memName, String memPwd){
-//    }
 
 }

@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.sql.Date;
 
 
-@Entity(name = "MEMBER")
+@Entity(name = "member")
 @Getter
 @Setter
 @NoArgsConstructor
