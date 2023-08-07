@@ -1,5 +1,6 @@
 package web.emp.vo;
 
+import core.coreVO.Core;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,14 +8,13 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serial;
-import java.io.Serializable;
 
 @Entity(name = "EMPLOYEE")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class EmpVo implements Serializable {
+public class EmpVo extends Core {
     @Serial
     private static final long serialVersionUID = 1L;
     @Id

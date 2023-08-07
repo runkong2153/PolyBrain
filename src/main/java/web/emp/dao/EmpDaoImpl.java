@@ -34,4 +34,14 @@ public class EmpDaoImpl implements EmpDao{
     public List<EmpVo> selectAll() {
         return null;
     }
+
+    @Override
+    public EmpVo selectForLogin(String empEmail, String empPwd) {
+        final String sql = "select * from EMPOLYEE where EMP_EMAIL = :empEmail and EMP_PWD = :empPwd";
+        return getSession()
+                .createNativeQuery(sql, EmpVo.class)
+                .setParameter("empEmail", empEmail)
+                .setParameter("empPwd", empPwd)
+                .uniqueResult();
+    }
 }

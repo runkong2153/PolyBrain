@@ -11,4 +11,5 @@ public interface EmpDao extends CoreDao<EmpVo, Integer> {
         Integer updateById(EmpVo empVo);
         EmpVo selectById(Integer empNo);
         List<EmpVo> selectAll();
+        EmpVo selectForLogin(String empEmail, String empPwd);
 }
