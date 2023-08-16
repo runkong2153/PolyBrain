@@ -10,15 +10,24 @@
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <link href="
+        https://cdn.jsdelivr.net/npm/sweetalert2@11.7.22/dist/sweetalert2.min.css
+        " rel="stylesheet">
         <style>
             nav.navbar{
                 position: sticky;
                 top:0;
-                z-index: 1;
+                z-index: 100;
             }
+
         </style>
     </head>
     <body>
+    <script src="
+        https://cdn.jsdelivr.net/npm/sweetalert2@11.7.22/dist/sweetalert2.all.min.js
+        "></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.all.min.js"></script>
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
@@ -49,6 +58,7 @@
                             <!-- Post categories-->
                             <!-- <a class="badge bg-secondary text-decoration-none link-light" href="#!">Web Design</a>
                             <a class="badge bg-secondary text-decoration-none link-light" href="#!">Freebies</a> -->
+                            <button class="btn-collect " id="button-collect" type="button">貼文收藏</button>
                         </header>
                         <!-- Preview image figure-->
 
@@ -68,13 +78,15 @@
                                 若是贏的話，則全數歸還報名費，並給予報名費x0.9的金票作為獎勵。</p>
                             <p class="fs-5 mb-4">V5.有個罕見的情況，鬥地主同排位賽一樣，遊戲限制時間為30分鐘。時間到立即結束，由AI判定  MVP的玩家所在隊伍獲勝。</p>
                         </section>
+
                     </article>
                     <!-- Comments section-->
                     <section class="mb-5">
                         <div class="card bg-light">
                             <div class="card-body">
                                 <!-- Comment form-->
-                                <form class="mb-4"><textarea class="form-control" rows="3" placeholder="留言..."></textarea></form>
+                                <form class="mb-4">
+
                                 <!-- Comment with nested comments-->
                                 <div class="d-flex mb-4">
                                     <!-- Parent comment-->
@@ -108,6 +120,9 @@
                                         有人要一起玩嗎~?新手求帶QQ
                                     </div>
                                 </div>
+                                    <textarea class="form-control" rows="3" placeholder="留言..."></textarea></form>
+                                <!-- Add Comment Button -->
+                                <button class="btn-comment  position-absolute bottom-0 end-0" id="addCommentBtn">新增留言</button>
                             </div>
                         </div>
                     </section>
@@ -162,5 +177,28 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+    <script>
+        const submitButton = document.querySelector(".btn-comment");
+		submitButton.addEventListener("click", function() {
+		Swal.fire({
+	  title: '確定送出??',
+	  text: "確認內容編輯後即可送出!",
+		  icon: 'warning',
+		  showCancelButton: true,
+		  confirmButtonColor: '#3085d6',
+		  cancelButtonColor: '#d33',
+		  confirmButtonText: 'OK'
+		}).then((result) => {
+		  if (result.isConfirmed) {
+		Swal.fire(
+		  '張貼成功!',
+		  '您的留言已經送出',
+		  '成功'
+		)
+	  }
+	})
+	  });
+    </script>
     </body>
 </html>
+
