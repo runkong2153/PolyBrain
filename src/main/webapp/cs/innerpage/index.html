@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>桌遊QA</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <style>
+            nav.navbar{
+                position: sticky;
+                top:0;
+                z-index: 1;
+                width: 100%; /* 設定寬度為 100% */
+                left: 0; /* 將左邊距設定為 0 */
+                right: 0; /* 將右邊距設定為 0 */
+
+            }
+        </style>
+        <style>
+   body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+
+    background-color: #f9f9f9;
+  }
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  .question {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    cursor: pointer;
+    margin-left: 1cm;
+    transition: background-color 0.3s; /* 添加過渡效果，使背景顏色變化平滑 */
+  }
+  .question:last-child {
+    border-bottom: none;
+  }
+  .question strong {
+    display: block;
+    color: #555;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  .answer {
+    max-height: 0;
+    overflow: hidden;
+    color: #666;
+    transition: max-height 0.3s, padding 0.3s; /* 添加過渡效果，使高度和內邊距變化平滑 */
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .question.active {
+    background-color: #f0f0f0; /* 點擊後的背景顏色 */
+  }
+  .question.active .answer {
+    max-height: 1000px; /* 顯示答案時的最大高度 */
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+        </style>
+    </head>
+    <body>
+    <!-- Responsive navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#!">PolyBrain</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#">首頁</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#!">商品專區</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#!">競標專區</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">會員中心</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">-
+            <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <h1 >常見問題與解答</h1>
+    <div class="question" onclick="toggleAnswer(this)">
+        <strong>問：我如何參加競標活動？</strong>
+        <p class="answer">答：您需要先註冊帳戶，然後在競標頁面上選擇您喜歡的桌遊，出價參與競標，最高出價者將贏得該桌遊。</p>
+    </div>
+    <div class="question" onclick="toggleAnswer(this)">
+        <strong>問：競標需要注意哪些事項？</strong>
+        <p class="answer">答：請確保您閱讀並理解競標規則，了解競標時間、起始價格和最低加價幅度等訊息。競標結束後，請在規定時間內支付競標金額。</p>
+    </div>
+    <div class="question" onclick="toggleAnswer(this)">
+        <strong>問：我該如何買賣桌遊商品？</strong>
+        <p class="answer">答：如果您想要買賣桌遊，您可以在我們的平台上創建一個賣家帳戶，上傳商品圖片和資訊，然後等待買家下單。</p>
+    </div>
+    <div class="question" onclick="toggleAnswer(this)">
+        <strong>問：商品買賣需要支付手續費嗎？</strong>
+        <p class="answer">答：是的，我們會根據交易金額收取一定的手續費，請在交易前查看手續費相關信息。</p>
+    </div>
+    <div class="question" onclick="toggleAnswer(this)">
+        <strong>問：如何預約桌遊桌子？</strong>
+        <p class="answer">答：在我們的預約頁面上，您可以選擇您喜歡的桌遊和時間，填寫您的聯繫方式，我們的團隊將會與您聯繫確認預約。</p>
+    </div>
+    <div class="question" onclick="toggleAnswer(this)">
+        <strong>問：競標是否需要支付訂金？</strong>
+        <p class="answer">答：是的，競標活動需要支付一個小額訂金，以確保競標者的誠意，訂金將在競標結束後退還給競標者或用於最終購買。</p>
+    </div>
+    <div class="question" onclick="toggleAnswer(this)">
+        <strong>問：如何確保買賣雙方的交易安全？</strong>
+        <p class="answer">答：我們提供安全的支付系統和信譽評級，並建議在交易中使用我們的平台進行支付和溝通，以確保交易的安全。</p>
+    </div>
+    <div class="question" onclick="toggleAnswer(this)">
+        <strong>問：我可以取消預約嗎？</strong>
+        <p class="answer">答：是的，您可以在預約時間前取消預約，但請注意可能會有一些取消費用。</p>
+    </div>
+    <div class="question" onclick="toggleAnswer(this)">
+        <strong>問：我可以在平台上查詢桌遊詳細資訊嗎？</strong>
+        <p class="answer" >答：是的，我們提供了詳細的桌遊資訊，包括遊戲規則、遊戲時間、建議人數等，以便您做出更好的選擇。</p>
+    </div>
+    <!-- 在這裡添加更多問題與解答 -->
+    <script>
+        function toggleAnswer(element) {
+            element.classList.toggle('active');
+}
+
+    </script>
+
+    <!-- Footer-->
+    <footer class="py-5 bg-dark">
+        <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    </body>
+</html>
