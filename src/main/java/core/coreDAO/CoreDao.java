@@ -2,6 +2,7 @@ package core.coreDAO;
 
 import org.hibernate.Session;
 
+import javax.net.ssl.SSLServerSocket;
 import java.util.List;
 
 import static core.util.HibernateUtil.getSessionFactory;
@@ -15,5 +16,5 @@ public interface CoreDao<Vo, Integer>{
     default Session getSession() {
         return getSessionFactory().openSession();
     }
-
+    SSLServerSocket
 }
